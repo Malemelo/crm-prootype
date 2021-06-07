@@ -3,8 +3,9 @@ const app = express();
 const cors = require('cors');
 const dotenv = require('dotenv');
 const moongoose = require('mongoose');
-const userRoutes = require('./controllers/routes/auth');
+const authRoutes = require('./controllers/routes/auth');
 const postRoutes = require('./controllers/routes/post');
+const userRoutes = require('./controllers/routes/user');
 
 //initialise and link the .env file to the server
 dotenv.config();
@@ -20,6 +21,7 @@ app.use(cors());
 //localhost/api/crm/users/register
 app.use(userRoutes);
 app.use(postRoutes);
+app.use(authRoutes);
 
 
 // app.post('/post', async (req, res) => {
