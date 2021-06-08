@@ -3,7 +3,9 @@ const app = express();
 const cors = require('cors');
 const dotenv = require('dotenv');
 const moongoose = require('mongoose');
-const userRoutes = require('./controllers/routes/auth');
+const authRoutes = require('./controllers/routes/auth');
+const postRoutes = require('./controllers/routes/post');
+const userRoutes = require('./controllers/routes/user');
 
 //initialise and link the .env file to the server
 dotenv.config();
@@ -17,7 +19,15 @@ app.use(cors());
 
 //routes middleware
 //localhost/api/crm/users/register
-app.use('/api/crm/users', userRoutes);
+app.use(userRoutes);
+app.use(postRoutes);
+app.use(authRoutes);
+
+
+// app.post('/post', async (req, res) => {
+//     console.log(req);   
+      
+//    });
 
 //running our Nodejs server.
 app.listen(process.env.PORT, () => console.log(`Server up and running on port ${process.env.PORT}`));

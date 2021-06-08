@@ -4,7 +4,7 @@ const userSchema = mongoose.Schema({
     name: {
         type: String,
         required: true,
-        min: 6,
+        min: 1,
         max: 255
     },
     dateOfBirth: {
@@ -40,8 +40,8 @@ const userSchema = mongoose.Schema({
     gender: {
         type: String,
         required: true,
-        min: 6,
-        max: 255,
+        min: 4,
+        max: 10,
     }
 });
 
