@@ -4,9 +4,7 @@ import Register from './Component/Register'
 function App() {
   return (
     <div className="App">
-      
       <Register />
-     
     </div>
   );
 }
